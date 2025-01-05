@@ -1,0 +1,65 @@
+{
+  "development": {
+    "username": "",
+    "password": "",
+    "database": "",
+    "port": "",
+    "host": "",
+    "dialect": "",
+    "timezone": "",
+    "dialectOptions": {
+      "useUTC": false,
+      "dateStrings": true,
+      "typeCast": true
+    },
+    "pool": {
+      "max": 200,  
+      "min": 0,   
+      "acquire": 30000, 
+      "idle": 10000  
+    }
+  
+  },
+  "uat": {
+    "username": "",
+    "password": "",
+    "database": "",
+    "port": "",
+    "host": "",
+    "dialect": "",
+    "timezone": "",
+    "dialectOptions": {
+      "useUTC": false,
+      "dateStrings": true,
+      "typeCast": true
+    },
+    "pool": {
+      "max": 200,  
+      "min": 0,   
+      "acquire": 30000, 
+      "idle": 10000  
+    }
+  
+  },
+  "production": {
+    "username": "",
+    "password": "",
+    "database": "",
+    "port": "",
+    "host": "",
+    "dialect": "",
+    "timezone": "+05:30",
+    "dialectOptions": {
+      "useUTC": false,
+      "dateStrings": true,
+      "typeCast": true
+    },
+    "pool": {
+      "max": 200,  
+      "min": 0,   
+      "acquire": 30000, 
+      "idle": 10000  
+    }
+
+  }
+}

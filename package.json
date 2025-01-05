@@ -1,0 +1,19 @@
+{
+  "name": "authentication_service",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "nodemon": "^3.1.9",
+    "xss-clean": "^0.1.4"
+  }
+}
