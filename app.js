@@ -13,7 +13,6 @@ const AppError = require("./utils/appError");
 const authenticationRoutes=require("./routes/authentication")
 
 const globalErrorHandler = require("./controller/errorController");
-app.use("/authentication",authenticationRoutes)
 
 app.use(cors(corsOptions));
 
@@ -25,6 +24,8 @@ app.use(helmet());
 
 // Middleware to parse incoming JSON requests
 app.use(express.json());
+app.use("/authentication",authenticationRoutes)
+
 
 // Basic route for the root URL
 app.get("/authentication", (req, res, next) => {

@@ -1,5 +1,6 @@
 const express=require("express")
 const router=express.Router()
 const authenticationController=require("../controller/authetication")
-router.get("/test-api",authenticationController.sampleApi)
+router.post("/send-otp",authenticationController.sendOtp)
+router.post("/verify-otp",authenticationController.verifyOtp)
 module.exports=router

@@ -1,12 +1,12 @@
 {
   "development": {
-    "username": "",
-    "password": "",
-    "database": "",
-    "port": "",
-    "host": "",
-    "dialect": "",
-    "timezone": "",
+    "username": "diigouser",
+    "password": "gl12htbm7wWuLlh",  
+    "database": "diigoo",
+    "port": "5432",
+    "host": "43.204.123.17",
+    "dialect": "postgres",
+    "timezone": "+05:30",
     "dialectOptions": {
       "useUTC": false,
       "dateStrings": true,
