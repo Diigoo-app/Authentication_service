@@ -1,11 +1,9 @@
 const AppError = require("../utils/appError");
 const AWS = require("aws-sdk");
-const AWS_ACCESS_KEY = "AKIA46ZDE3PKPIKQV44U";
-const AWS_SECRET_KEY = "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";
 const SNS = new AWS.SNS({
     region: "ap-south-1",
-    accessKeyId: AWS_ACCESS_KEY,
-    secretAccessKey: AWS_SECRET_KEY
+    accessKeyId: process.env.AWS_ACCESS_KEY,
+    secretAccessKey: process.env.AWS_SECRET_KEY
 });
 const {Otp}=require("../models")
 function generateRandomNumber(min, max) {
