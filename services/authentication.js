@@ -5,7 +5,8 @@ const SNS = new AWS.SNS({
     accessKeyId: process.env.AWS_ACCESS_KEY,
     secretAccessKey: process.env.AWS_SECRET_KEY
 });
-const {Otp}=require("../models")
+const {Otp,User}=require("../models");
+const { where } = require("sequelize");
 function generateRandomNumber(min, max) {
     return Math.floor(Math.random() * (9999 - 1000 + 1) + 1000);
 }
@@ -79,6 +80,22 @@ exports.verifyOtp=async(data)=>{
     }catch(error){
         throw new AppError(error.message,error.StatusCode)
 
+
+    }
+}
+exports.createUser=async (data)=>{
+    try{
+        const userData=await User.findOne({where:{phone_number:data.phone_number}})
+        console.log(userData)
+        if(userData){
+            throw new AppError("phone number already exist",409)
+        }
+        const createUser=await User.create(data)
+        return true
+
+
+    }catch(error){
+        throw new AppError(error.message,error.StatusCode)
 
     }
 }
