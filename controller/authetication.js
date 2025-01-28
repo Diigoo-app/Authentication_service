@@ -49,3 +49,37 @@ exports.createUser=catchAsync( async (req,res)=>{
 
 }
 })
+exports.getAllUsers=catchAsync( async (req,res)=>{
+    try{
+
+
+    const result=await autheticationService.getAllUsers()
+    res.send({
+        message:"user is created",
+        status:true,
+        data:result
+    })
+}catch(error){
+    throw new AppError(error.message,error.StatusCode)
+
+}
+})
+exports.getOneUser=catchAsync( async (req,res)=>{
+    try{
+         if(!req.query.userName){
+            throw new AppError("userName is required",400)
+
+         }
+
+
+    const result=await autheticationService.getOneUser(req.query.userName)
+    res.send({
+        message:"user is created",
+        status:true,
+        data:result
+    })
+}catch(error){
+    throw new AppError(error.message,error.StatusCode)
+
+}
+})

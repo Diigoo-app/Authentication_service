@@ -85,11 +85,12 @@ exports.verifyOtp=async(data)=>{
 }
 exports.createUser=async (data)=>{
     try{
-        const userData=await User.findOne({where:{phone_number:data.phone_number}})
+        const userData=await User.findOne({where:{phone_number:data.phone_number,user_name:data.user_name}})
         console.log(userData)
         if(userData){
-            throw new AppError("phone number already exist",409)
+            throw new AppError("phone number or user_name already exist",409)
         }
+    
         const createUser=await User.create(data)
         return true
 
@@ -99,3 +100,27 @@ exports.createUser=async (data)=>{
 
     }
 }
+exports.getAllUsers=async (data)=>{
+    try{
+        const result=await User.findAll({})
+        return result
+
+    }catch(error){
+        throw new AppError(error.message,error.StatusCode)
+
+
+    }
+}
+exports.getOneUser=async (userName)=>{
+    console.log(userName)
+    try{
+        const result=await User.findOne({where:{user_name:userName}})
+        return result
+
+    }catch(error){
+        throw new AppError(error.message,error.StatusCode)
+
+
+    }
+}
+

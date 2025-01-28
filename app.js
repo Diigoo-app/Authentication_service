@@ -53,7 +53,7 @@ app.use(
 app.use(globalErrorHandler);
 
 // Start the server on the specified port from environment variables or default to 7010
-const PORT = process.env.APP_PORT || 7010;
+const PORT = process.env.APP_PORT || 7001;
 
 app.listen(PORT, () => {
     console.log("Deal - Server up & running on port", PORT);

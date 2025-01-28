@@ -4,4 +4,6 @@ const authenticationController=require("../controller/authetication")
 router.post("/send-otp",authenticationController.sendOtp)
 router.post("/verify-otp",authenticationController.verifyOtp)
 router.post("/create-user",authenticationController.createUser)
+router.get("/get-users",authenticationController.getAllUsers)
+router.get("/get-one-user",authenticationController.getOneUser)
 module.exports=router

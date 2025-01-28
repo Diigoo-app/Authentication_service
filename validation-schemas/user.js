@@ -8,6 +8,11 @@ const userSchema = Joi.object({
         "string.base": "user_name must be a string.",
         "any.required": "user_name is required.",
     }),
+    full_name: Joi.string().required().messages({
+        "string.base": "full_name must be a string.",
+        "any.required": "full_name is required.",
+    }),
+
     date_of_birth:Joi.string().required().messages({
         "string.base": "date_of_birth must be a string.",
         "any.required": "date_of_birth is required.",
